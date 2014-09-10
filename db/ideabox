@@ -1,10 +1,11 @@
 ---
 ideas:
-- title: Vacation
-  description: Kalispel Montana!!!!!!
-  rank: 3
-- title: graduate
-  description: make monies
-  rank: 3
-- title: start business
-  description: love life
+- title: Graduate!
+  description: Check meetups!! Email people!!
+  rank: 1
+  links:
+  - http://www.facebook.com
+  - http://www.facebook.com
+  - http://www.nfl.com
+- title: Start Business
+  description: Make Monies

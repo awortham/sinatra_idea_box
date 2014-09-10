@@ -3,13 +3,15 @@ class Idea
   attr_reader :title,
               :description,
               :id,
-              :rank
+              :rank,
+              :links
 
   def initialize(attributes = {})
     @title       = attributes["title"]
     @description = attributes["description"]
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
+    @links       = attributes["links"] || []
   end
 
   def save
@@ -20,7 +22,8 @@ class Idea
     {
       "title" => title,
       "description" => description,
-      "rank" => rank
+      "rank" => rank,
+      "links" => links
     }
   end
 
@@ -30,5 +33,9 @@ class Idea
 
   def <=>(other)
     other.rank <=> rank
+  end
+
+  def add_link(link)
+    links << link
   end
 end

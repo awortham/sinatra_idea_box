@@ -44,7 +44,8 @@ class IdeaStore
 
   def self.update(id, data)
     database.transaction do
-      database['ideas'][id] = data
+      existing_data = database['ideas'][id]
+      database['ideas'][id] = existing_data.merge(data)
     end
   end
 

@@ -1,0 +1,8 @@
+%h1 Details
+%p
+  = idea.title
+  %br/
+  = idea.description
+  - idea.links.each do |link|
+    = link
+%a{:href => "home"} Home

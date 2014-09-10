@@ -1,15 +1,19 @@
 require 'idea_box'
+require 'Haml'
 
 class IdeaBoxApp < Sinatra::Base
   set :method_override, true
   set :root, 'lib/app'
 
+  # http://www.sinatrarb.com/configuration.html
+  set :public_folder, -> { File.join(root, "public") }
+
   not_found do
-    erb :error
+    haml :error
   end
 
   get '/' do
-     erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
+     haml :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
   end
 
   post '/' do
@@ -24,7 +28,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :edit, locals: {idea: idea}
+    haml :edit, locals: {idea: idea}
   end
 
   put '/:id' do |id|
@@ -32,10 +36,27 @@ class IdeaBoxApp < Sinatra::Base
     redirect '/'
   end
 
-  post '/:id/like' do |id|
-    @idea = IdeaStore.find(id.to_i)
-    @idea.like!
+  post '/:id/link' do |id|
+    idea = IdeaStore.find(id.to_i)
+    idea.add_link(params[:link])
+    # haml :details, locals: {link: link}
     IdeaStore.update(id.to_i, idea.to_h)
+    redirect '/'
+  end
+
+  post '/:id/like' do |id|
+    idea = IdeaStore.find(id.to_i)
+    idea.like!
+    IdeaStore.update(id.to_i, idea.to_h)
+    redirect '/'
+  end
+
+  get '/:id/details' do |id|
+    idea = IdeaStore.find(id.to_i)
+    haml :details, locals: {idea: idea}
+  end
+
+  get '/:id/home' do
     redirect '/'
   end
 end

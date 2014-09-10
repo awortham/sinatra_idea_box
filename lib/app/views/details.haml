@@ -6,5 +6,8 @@
 
   %div.links
   - idea.links.each do |link|
-    %p= link
+    %a{:href => "#{link}"} #{link}
+    %br
+
+    
 %a{:href => "home"} Home

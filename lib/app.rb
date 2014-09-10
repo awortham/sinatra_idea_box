@@ -1,4 +1,4 @@
-require 'idea_box'
+require_relative './idea_box'
 require 'Haml'
 
 class IdeaBoxApp < Sinatra::Base

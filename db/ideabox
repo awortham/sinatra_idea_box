@@ -1,13 +1,18 @@
 ---
 ideas:
-- title: Graduate!
-  description: Check meetups!! Email people!!
+- title: Test idea
+  description: Test description
+- title: Test idea
+  description: Test description
+- title: Test idea
+  description: Test description
+- title: Test idea
+  description: Test description
+- title: Test idea
+  description: Test description
+- title: Graduate
+  description: Make monies!
   rank: 1
   links:
-  - http://www.facebook.com
-  - http://www.facebook.com
   - http://www.nfl.com
-- title: Start Business
-  description: Make Monies
-- title: Lunch
-  description: Ramen
+  - http://www.facebook.com

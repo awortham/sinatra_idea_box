@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', require: 'sinatra/base'
+gem 'sinatra'
 gem 'sinatra-contrib', require: 'sinatra/reloader'
 gem 'shotgun'
 gem 'pry'
 gem 'haml'
+gem 'nokogiri'

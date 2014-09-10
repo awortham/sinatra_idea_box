@@ -1,11 +1,48 @@
 body {
-  width: 400px;
+  width: 700px;
   margin: auto;
   background: azure;
 }
 
 h1 {
   color: orange;
+  font-size: 50px;
+  text-align: center;
   text-shadow:
     2px 2px 1px black;
+}
+
+li {
+  list-style-type: none;
+}
+
+.headings {
+  font-size: 25;
+}
+
+.description {
+  float: left;
+  width: 40%;
+}
+
+.idea {
+  float: left;
+  width: 30%;
+  margin-left: 180px;
+}
+
+#existing {
+  margin-top: 180px;
+  margin-left: 120px;
+}
+
+#existing li {
+  width: 50%;
+  float: left;
+  margin-top: 25px;
+}
+
+#existing h3 {
+  margin-left: 40px;
+  text-decoration: underline;
 }

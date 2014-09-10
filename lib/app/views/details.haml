@@ -3,6 +3,8 @@
   = idea.title
   %br/
   = idea.description
+
+  %div.links
   - idea.links.each do |link|
-    = link
+    %p= link
 %a{:href => "home"} Home

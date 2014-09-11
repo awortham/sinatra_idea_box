@@ -5,5 +5,16 @@ ideas:
   rank: 0
   links:
   - http://www.nfl.com
+  category: play
+- title: Beer
+  description: Go to happy Hour
+  rank: 13
+  links:
+  - http://www.nfl.com
   - http://www.cabelas.com
+  - http://www.facebook.com
   category: Work
+- title: Start Business
+  description: Make Monies
+- title: grow a neckbeard
+  description: very long and nasty

@@ -1,10 +1,12 @@
 class Idea
   include Comparable
-  attr_reader :title,
-              :description,
-              :id,
-              :rank,
-              :links
+  attr_accessor :links
+
+  attr_reader   :title,
+                :description,
+                :id,
+                :rank
+                # :category
 
   def initialize(attributes = {})
     @title       = attributes["title"]
@@ -12,6 +14,7 @@ class Idea
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
     @links       = attributes["links"] || []
+    # @category    = attributes["category"] || "Work"
   end
 
   def save
@@ -38,4 +41,8 @@ class Idea
   def add_link(link)
     links << link
   end
+
+  # def remove_link(link)
+  #   @links.reject! {|l| l if l.include?(link)}
+  # end
 end

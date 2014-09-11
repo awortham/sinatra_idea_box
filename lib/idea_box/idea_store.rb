@@ -54,4 +54,12 @@ class IdeaStore
       database['ideas'] << data
     end
   end
+
+  def self.remove_link(id, link)
+    idea = find(id.to_i)
+    idea.links.reject! {|l| l if l.include?(link)}
+    database.transaction do
+      database['ideas'][id] = idea.to_h
+    end
+  end
 end

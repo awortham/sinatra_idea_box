@@ -1,13 +1,14 @@
-%h1 Details
-%p
-  = idea.title
-  %br/
-  = idea.description
-
-  %div.links
+%div.details
+  %h1 Details
+  %p
+    %div.title= idea.title
+    %br/
+    = idea.description
+  %h2 Links for more information on idea:
   - idea.links.each do |link|
-    %a{:href => "#{link}"} #{link}
+    %a.reference{:href => "#{link}"} #{link}
     %br
+    %form{:action => "/#{idea.id}/delete_link/#{link.gsub("http://", "")}", :method => "POST", :style => "display: inline"}
+      %input.button{:type => "submit", :value => "Delete Link" }
 
-    
-%a{:href => "home"} Home
+  %a.home{:href => "home"} Create More Ideas!

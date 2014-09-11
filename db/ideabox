@@ -1,18 +1,7 @@
 ---
 ideas:
-- title: Test idea
-  description: Test description
-- title: Test idea
-  description: Test description
-- title: Test idea
-  description: Test description
-- title: Test idea
-  description: Test description
-- title: Test idea
-  description: Test description
-- title: Graduate
-  description: Make monies!
-  rank: 1
+- title: Graduate!
+  description: make monies
+  rank: 0
   links:
   - http://www.nfl.com
-  - http://www.facebook.com

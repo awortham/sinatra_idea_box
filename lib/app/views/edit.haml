@@ -1,23 +1,24 @@
 %h1 IdeaBox
 %form{:action => "/#{idea.id}", :method => "POST"}
-  %p
+  %div.edit
+    %p
+      - if idea.id
+        %h2 Edit your Idea:
+      - else
+        Your Idea:
     - if idea.id
-      Edit your Idea:
-    - else
-      Your Idea:
-  - if idea.id
-    %input{:name => "_method", :type => "hidden", :value => "PUT"}/
-  %p
-    Name of Idea:
-  %input{:name => "idea[title]", :type => "text", :value => idea.title}/
-  %br/
-  %p
-    Description:
-  %textarea{:name => "idea[description]"}= idea.description
-  %br/
-  %input.btn.btn-primary{:type => "submit"}/
+      %input{:name => "_method", :type => "hidden", :value => "PUT"}/
+    %p
+      Name of Idea:
+    %input{:name => "idea[title]", :type => "text", :value => idea.title}/
+    %br/
+    %p
+      Description:
+    %textarea{:name => "idea[description]"}= idea.description
+    %br/
+    %input.btn.btn-primary{:type => "submit"}/
 %form#link{:action => "/#{idea.id}/link", :method => "post"}
   %p
-    Add a Link Related to Idea:
+    %h2 Add a Link Related to Idea:
   %input{:name => "link", :type => "url"}
     %input{:type => "submit", :value => "Add Link"}

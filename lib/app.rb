@@ -39,7 +39,6 @@ class IdeaBoxApp < Sinatra::Base
   post '/:id/link' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.add_link(params[:link])
-    # haml :details, locals: {link: link}
     IdeaStore.update(id.to_i, idea.to_h)
     redirect '/'
   end
@@ -58,5 +57,10 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/home' do
     redirect '/'
+  end
+
+  post '/:id/delete_link/:link' do |id, link|
+    IdeaStore.remove_link(id.to_i, link)
+    redirect '/:id/details'
   end
 end

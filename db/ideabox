@@ -1,8 +1,8 @@
 ---
 ideas:
 - title: Graduate!
-  description: make monie!s
-  rank: 0
+  description: Make monies!
+  rank: 13
   links:
   - http://www.nfl.com
   category: play
@@ -16,5 +16,15 @@ ideas:
   category: Work
 - title: Start Business
   description: Make Monies
+  rank: 1
+  links: []
+  category: Work
 - title: grow a neckbeard
   description: very long and nasty
+- title: Vacation
+  description: Let's go to Montana!
+  rank: 1
+  links: []
+  category: Work
+- title: Search for Jobs
+  description: "make a list of all rails companies\r\n"

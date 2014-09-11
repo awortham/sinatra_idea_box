@@ -62,4 +62,12 @@ class IdeaStore
       database['ideas'][id] = idea.to_h
     end
   end
+
+  def self.change_category(id, category)
+    idea = find(id)
+    idea.change_category(category)
+    database.transaction do
+      database['ideas'][id] = idea.to_h
+    end
+  end
 end

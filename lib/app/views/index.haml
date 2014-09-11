@@ -27,3 +27,7 @@
             %input{:name => "_method", :type => "hidden", :value => "DELETE"}
               %input{:type => "submit", :value => "delete"}/
           %a{:href => "/#{idea.id}/details"} View Details
+          %br
+          %form{:action => "/#{idea.id}/category", :method => "POST", :style => "display: inline"}
+            %textarea{:name => ":category"}
+            %input{:type => "submit", :value => "category"}

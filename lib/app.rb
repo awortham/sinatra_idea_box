@@ -12,6 +12,11 @@ class IdeaBoxApp < Sinatra::Base
     haml :error
   end
 
+  post '/:id/category' do |id|
+    IdeaStore.change_category(id.to_i, params[':category'])
+    redirect '/'
+  end
+
   get '/' do
      haml :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
   end
@@ -63,4 +68,6 @@ class IdeaBoxApp < Sinatra::Base
     IdeaStore.remove_link(id.to_i, link)
     redirect '/:id/details'
   end
+
+
 end

@@ -5,8 +5,8 @@ class Idea
   attr_reader   :title,
                 :description,
                 :id,
-                :rank
-                # :category
+                :rank,
+                :category
 
   def initialize(attributes = {})
     @title       = attributes["title"]
@@ -14,7 +14,7 @@ class Idea
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
     @links       = attributes["links"] || []
-    # @category    = attributes["category"] || "Work"
+    @category    = attributes["category"] || "Work"
   end
 
   def save
@@ -26,7 +26,8 @@ class Idea
       "title" => title,
       "description" => description,
       "rank" => rank,
-      "links" => links
+      "links" => links,
+      "category" => category
     }
   end
 
@@ -42,7 +43,8 @@ class Idea
     links << link
   end
 
-  # def remove_link(link)
-  #   @links.reject! {|l| l if l.include?(link)}
-  # end
+  def change_category(new_category)
+    @category = ""
+    @category << new_category
+  end
 end
